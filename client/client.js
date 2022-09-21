@@ -19,19 +19,20 @@ onNet('safedv:SafeDv', (source, args) => {
 
     // Otherwise, delete all vehicles after Config.dv_time_seconds, sending periodic messages to the player
     else {
+        // TODO: Reimplement this but cleaner.
         let message = 'Deleting all vehicles in ' + Config.dv_time_seconds + ' seconds!';
         emit('chat:addMessage', {
-            color: [255, 0, 0],
+            color: Config.prefix_color,
             multiline: true,
-            args: ["DV", message]
+            args: [Config.prefix, message]
         });
         
         setTimeout(() => {
             message = 'Deleting all vehicles in ' + Math.floor(Config.dv_time_seconds / 2) + ' seconds!';
             emit('chat:addMessage', {
-                color: [255, 0, 0],
+                color: Config.prefix_color,
                 multiline: true,
-                args: ["DV", message]
+                args: [Config.prefix, message]
             });
             console.log(message);
         }, Config.dv_time_seconds / 2 * 1000);
@@ -39,9 +40,9 @@ onNet('safedv:SafeDv', (source, args) => {
         setTimeout(() => {
             message = 'Deleting all vehicles in 3 seconds!';
             emit('chat:addMessage', {
-                color: [255, 0, 0],
+                color: Config.prefix_color,
                 multiline: true,
-                args: ["DV", message]
+                args: [Config.prefix, message]
             });
             console.log(message);
         }, Config.dv_time_seconds * 1000 - 3000);
@@ -49,9 +50,9 @@ onNet('safedv:SafeDv', (source, args) => {
         setTimeout(() => {
             message = 'Deleting all vehicles in 2 seconds!';
             emit('chat:addMessage', {
-                color: [255, 0, 0],
+                color: Config.prefix_color,
                 multiline: true,
-                args: ["DV", message]
+                args: [Config.prefix, message]
             });
             console.log(message);
         }, Config.dv_time_seconds * 1000 - 2000);
@@ -59,9 +60,9 @@ onNet('safedv:SafeDv', (source, args) => {
         setTimeout(() => {
             message = 'Deleting all vehicles in 1 second!';
             emit('chat:addMessage', {
-                color: [255, 0, 0],
+                color: Config.prefix_color,
                 multiline: true,
-                args: ["DV", message]
+                args: [Config.prefix, message]
             });
             console.log(message);
         }, Config.dv_time_seconds * 1000 - 1000);
@@ -69,9 +70,9 @@ onNet('safedv:SafeDv', (source, args) => {
         setTimeout(() => {
             message = `Deleting all vehicles!`;
             emit('chat:addMessage', {
-                color: [255, 0, 0],
+                color: Config.prefix_color,
                 multiline: true,
-                args: ["DV", message]
+                args: [Config.prefix, message]
             });
             safeDv(range);
         }, Config.dv_time_seconds * 1000);
