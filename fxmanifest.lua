@@ -5,7 +5,7 @@ description 'DV all cars without interfering with roleplay'
 
 author 'Tips'
 
-version '0.0.1'
+version '0.2'
 
 client_script {
     'client/client.js'
