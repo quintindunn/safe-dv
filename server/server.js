@@ -1,17 +1,6 @@
 RegisterCommand('safedv', (source, args) => {
     // Hint you can input a range as an argument
-    emit('chat:addSuggestion', '/safedv', 'Deletes all vehicles that are not within a safe zone', [
-        {
-            name: 'range',
-            help: 'The range to check for players'
-        }
-    ]);
 
-    if (!IsPlayerAceAllowed(source, Config.safe_dv_ace))
-    {
-        console.log('You are not allowed to use this command!');
-        return;
-    }
     // Pass the range to the client
     if (args.length > 0) {
         if (isNaN(args[0])) {
@@ -23,6 +12,9 @@ RegisterCommand('safedv', (source, args) => {
             return;
         }
     }
-    emitNet('safedv:SafeDv', source, args);
-});
+
+    let range = args[0] ? args[0] : Config.safe_dv_range;
+    emitNet('safedv:SafeDv', source, range);
+
+}, true);
 

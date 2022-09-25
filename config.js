@@ -1,7 +1,6 @@
 const Config = {
     prefix: "DV",
     prefix_color: [255, 0, 0],
-    safe_dv_ace: "safedv.Safedv", // The ACE required to use the command
     safe_dv_range: 30, // The range to check for players
     dv_ai_vehicles: false, // DV vehicles that are AI controller (implemented by if the vehicle is occupied)
 
