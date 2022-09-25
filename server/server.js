@@ -1,11 +1,6 @@
 RegisterCommand('safedv', (source, args) => {
     // Hint you can input a range as an argument
-
-    if (!IsPlayerAceAllowed(source, Config.safe_dv_ace))
-    {
-        console.log('You are not allowed to use this command!');
-        return;
-    }
+    
     // Pass the range to the client
     if (args.length > 0) {
         if (isNaN(args[0])) {
@@ -18,5 +13,5 @@ RegisterCommand('safedv', (source, args) => {
         }
     }
     emitNet('safedv:SafeDv', source, args);
-});
+}, true);
 
