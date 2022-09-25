@@ -10,5 +10,5 @@ const Config = {
         {pos: {x: -40, y: -1095}, radius: 25}
     ],
 
-    dv_time_seconds: 10, // Disable with -1, the time in seconds to wait before running the mass DV. Recommeneded to be either disabled or a higher value due to the message implementation.
+    dv_time_seconds: 30, // Disable with -1, the time in seconds to wait before running the mass DV. Recommeneded to be either disabled or a higher value due to the message implementation.
 }
