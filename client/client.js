@@ -9,10 +9,7 @@ on('onClientResourceStart', (resourceName) => {
     }
 });
 
-onNet('safedv:SafeDv', (source, args) => {
-    console.log('SafeDv called! ' + source);
-    let range = source[0] ? source[0] : Config.safe_dv_range;
-    
+onNet('safedv:SafeDv', (range) => { 
     // If Config.dv_time_seconds is -1, delete all vehicles
     if (Config.dv_time_seconds == -1) 
         safeDv(range);
